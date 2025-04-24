@@ -1,4 +1,4 @@
-# [Final-Lab-Task-3.1](https://github.com/user-attachments/files/19893635/Finals.Task.3.Using.MYSQL.Clause.Soguilon.docx)
+# [Final-Lab-Task-3.1]()
 - This portfolio uses MySQL queries to illustrate fundamental SQL skills. It includes retrieving, aggregating, and sorting data according to an existing dataset in order to manage an online course database.
 
 # Step By Step Process:
