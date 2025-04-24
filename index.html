@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finals Lab Task 3 - Table Manipulation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #1c1e21;
+      overflow-x: hidden;
+      background: url('https://img1.picmix.com/output/stamp/normal/0/7/8/0/2580870_8444e.gif') repeat;
+      background-size: 200px;
+    }
+
+    header {
+      padding: 3rem 2rem 1rem;
+      background-color: #00CDFEcc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+ .profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-right: 1.5rem;
+  float: left;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #00CDFEcc;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      color: #1877f2;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .card p, .card a {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1c1e21;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    footer {
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      background-color: #00CDFEcc;
+      color: #fff;
+      text-align: center;
+    }
+     /* Button design for download link */
+    .download-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      background-color: #1877f2;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #0f5db7;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <img src="https://s5.ezgif.com/tmp/ezgif-572a3fe9665d5c.gif" alt="Cassandra Halili" class="profile-pic" />
+  <h1><strong>Finals Lab Task 1</strong></h1>
+  <p><strong>MySQL CLAUSE</strong></p>
+  <p><strong>Using MySQL Workbench</strong></p>
+</header>
+
+  <div style="max-width: 900px; margin: 2rem auto; padding: 0 2rem;">
+  <section style="overflow: auto;">
+      <h2>Portfolio Overview</h2>
+      <div class="card">
+        <p>This portfolio uses MySQL queries to illustrate fundamental SQL skills. It includes retrieving, aggregating, and sorting data according to an existing dataset in order to manage an online course database.</p>
+      <!-- Download Button -->
+        <a href="https://github.com/user-attachments/files/19893679/Final.lab.task.3-1.docx" class="download-btn" download>
+            Download The Word File
+        </a>
+      </div>
+
+      <h2>Step by Step Process</h2>
+      <div class="card">
+         <h3>Step 1: Create the Database</h3>
+  <ul>
+    <li>Open your MySQL environment (e.g., MySQL Workbench or phpMyAdmin).</li>
+    <li>Create a new database with the command:<br><code>CREATE DATABASE online_courseDB;</code></li>
+  </ul>
+
+  <h3>Step 2: Select the Database</h3>
+  <ul>
+    <li>Switch to the newly created database:<br><code>USE online_courseDB;</code></li>
+  </ul>
+
+  <h3>Step 3: Load the Initial Data</h3>
+  <ul>
+    <li>Download the <code>onlineCourse.l</code> file as instructed.</li>
+    <li>Run or import the file into your MySQL environment. This will:
+      <ul>
+        <li>Create a <code>courses</code> table</li>
+        <li>Insert 20 course records</li>
+        <li>Include the following fields:
+          <ul>
+            <li><code>id</code>: auto-incremented primary key</li>
+            <li><code>course_name</code>: VARCHAR, not null</li>
+            <li><code>category</code>: VARCHAR, not null</li>
+            <li><code>enrollment_limit</code>: INTEGER, not null</li>
+            <li><code>students_enrolled</code>: INTEGER, not null</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Step 4: Complete the SQL Tasks</h3>
+  <ul>
+    <li><strong>Task 1: Courses Below Capacity</strong><br>
+    Display courses with fewer enrolled students than the limit<br>
+    <em>SQL concept:</em> <code>SELECT</code> with <code>WHERE</code></li>
+
+    <li><strong>Task 2: Group by Category</strong><br>
+    Group courses by category and show the total enrolled students per group<br>
+    <em>SQL concepts:</em> <code>GROUP BY</code>, <code>SUM()</code></li>
+
+    <li><strong>Task 3: Fully Enrolled Courses</strong><br>
+    Show courses where enrollment meets the maximum limit<br>
+    <em>SQL concept:</em> <code>WHERE</code> with equality condition</li>
+
+    <li><strong>Task 4: Total Enrollment</strong><br>
+    Calculate total enrolled students across all courses<br>
+    <em>SQL concept:</em> <code>SUM()</code> aggregation</li>
+
+    <li><strong>Task 5: Sort by Enrollment</strong><br>
+    Display courses in ascending order based on number of enrolled students<br>
+    <em>SQL concept:</em> <code>ORDER BY</code> ascending</li>
+  </ul>
+
+  <h3>Final Step: Review Outputs</h3>
+  <ul>
+    <li>Confirm each query gives the correct result</li>
+    <li>Ensure all field names are accurate and data is consistent</li>
+  </ul>
+
+  <h2>Screenshots</h2>
+  <h3>Query Statements</h3>
+  <ol>
+    <li>Task 1<br><img src="https://github.com/user-attachments/assets/196adc4d-fda2-498f-a748-90bcd5a8e93a" alt="Task 1 Query"></li>
+    <li>Task 2<br><img src="https://github.com/user-attachments/assets/60457f8b-f814-440b-8045-69c65c071116" alt="Task 2 Query"></li>
+    <li>Task 3<br><img src="https://github.com/user-attachments/assets/cd91bee7-8d8b-41ce-9bcb-1df1fef7a05e" alt="Task 3 Query"></li>
+    <li>Task 4<br><img src="https://github.com/user-attachments/assets/5c78e883-12d3-48c3-b34b-a11e76efe941" alt="Task 4 Query"></li>
+    <li>Task 5<br><img src="https://github.com/user-attachments/assets/225aacc5-85ab-41d7-9157-9231b0a7c65a" alt="Task 5 Query"></li>
+  </ol>
+
+  <h3>Output of Query Statements</h3>
+  <ol>
+    <li>Task 1<br><img src="https://github.com/user-attachments/assets/522f4c0f-33ec-4762-848f-751357991336" alt="Task 1 Output"></li>
+    <li>Task 2<br><img src="https://github.com/user-attachments/assets/e3c2b57c-1798-489d-b0be-4ecb1f53b7dc" alt="Task 2 Output"></li>
+    <li>Task 3<br><img src="https://github.com/user-attachments/assets/bc183082-7ec5-45fa-a6df-787c3d11fc32" alt="Task 3 Output"></li>
+    <li>Task 4<br><img src="https://github.com/user-attachments/assets/f528e339-674a-4869-937f-3763002b1298" alt="Task 4 Output"></li>
+    <li>Task 5<br><img src="https://github.com/user-attachments/assets/0e5a2ce5-5823-4318-bd75-461cd5a2fb52" alt="Task 5 Output"></li>
+  </ol>
+
+</section>
+
+</div>
+ <footer>
+    <p>©Cassandra Halili | Class I102 | 2025</p>
+    <a href="https://github.com/CMHalili/Final-Lab-Task-3.1" target="_blank" style="color:var(--neon); text-shadow: 0 0 6px var(--neon);">View Finals Lab Task 3.1 on Github</a>
+  </footer>
+
+</body>
+</html>
